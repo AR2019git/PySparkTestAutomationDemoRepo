@@ -8,6 +8,7 @@ node {
   def BUNDLETARGET  = "dev"
 
   stage('Checkout') {
+    sh "echo Hello Ajit"
     git branch: GITBRANCH, url: GITREPOREMOTE
   }
   stage('Validate Bundle') {
