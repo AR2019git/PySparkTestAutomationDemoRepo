@@ -1,10 +1,10 @@
 // Filename: Jenkinsfile
 node {
-  def GITREPOREMOTE = "https://github.com/<user-name>/<repo-name>.git"
-  def GITBRANCH     = "<release-branch-name>"
+  def GITREPOREMOTE = "https://github.com/AR2019git/PySparkTestAutomationDemoRepo.git"
+  def GITBRANCH     = "master"
   def DBCLIPATH     = "<databricks-cli-installation-path>"
   def JQPATH        = "<jq-installation-path>"
-  def JOBPREFIX     = "<job-prefix-name>"
+  def JOBPREFIX     = "PySparkTestAutomationCICDJob"
   def BUNDLETARGET  = "dev"
 
   stage('Checkout') {
