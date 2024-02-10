@@ -2,8 +2,8 @@
 node {
   def GITREPOREMOTE = "https://github.com/AR2019git/PySparkTestAutomationDemoRepo.git"
   def GITBRANCH     = "master"
-  def DBCLIPATH     = "<databricks-cli-installation-path>"
-  def JQPATH        = "<jq-installation-path>"
+  def DBCLIPATH     = "/usr/local/bin"
+  def JQPATH        = "/usr/local/bin"
   def JOBPREFIX     = "PySparkTestAutomationCICDJob"
   def BUNDLETARGET  = "dev"
 
