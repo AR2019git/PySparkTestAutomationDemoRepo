@@ -8,10 +8,10 @@ variables:
     default: <job-prefix-name>
   spark_version:
     description: The cluster's Spark version ID.
-    default: <spark-version-id>
+    default: 3.5.0
   node_type_id:
     description: The cluster's node type ID.
-    default: <cluster-node-type-id>
+    default: Standard_DS3_v2
 
 artifacts:
   dabdemo-wheel:
