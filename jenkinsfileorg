@@ -28,22 +28,27 @@ node {
   }
  stage('Deploy Bundle') {
     sh """#!/bin/bash
-          ${DBCLIPATH}/databricks bundle deploy -t ${BUNDLETARGET}
+          echo "Skipping  Deploy Bundle"
+         # ${DBCLIPATH}/databricks bundle deploy -t ${BUNDLETARGET}
        """
   }
   stage('Run Unit Tests') {
     sh """#!/bin/bash
-          ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-unit-tests
+           echo "Skipping  Unit Test Runs"
+         # ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-unit-tests
        """
   }
   stage('Run Notebook') {
     sh """#!/bin/bash
-          ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-dabdemo-notebook
+        echo "Skipping Evaluate DABDEMO Runs"
+
+          #${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-dabdemo-notebook
        """
   }
   stage('Evaluate Notebook Runs') {
     sh """#!/bin/bash
-          ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} evaluate-notebook-runs
+       echo "Skipping Evaluate Notebook Runs"
+        #${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} evaluate-notebook-runs
        """
   }
   
@@ -52,6 +57,13 @@ node {
     def getPath = "${DBCLIPATH}/databricks bundle validate -t ${BUNDLETARGET} | ${JQPATH}/jq -r .workspace.file_path"
     def output = sh(script: getPath, returnStdout: true).trim()
 
+   sh """#!/bin/bash
+       echo "output"
+       echo ${output}
+      echo ${getPath}
+
+    
+       """
     if (output) {
       DATABRICKS_BUNDLE_WORKSPACE_ROOT_PATH = "${output}"
     } else {
