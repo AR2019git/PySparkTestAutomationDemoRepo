@@ -79,7 +79,7 @@ node {
        """
   }
   stage('Publish Test Results') {
-    junit allowEmptyResults: true, testResults: '/Users/ajitrajan/documents/GitHub/PySparkTestAutomationDemoRepo/testresults/*.xml', skipPublishingChecks: true
+    junit allowEmptyResults: true, testResults: '**/testresults/*.xml', skipPublishingChecks: true
   
 }
 
