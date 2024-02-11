@@ -58,12 +58,12 @@ node {
     def output = sh(script: getPath, returnStdout: true).trim()
 
    sh """#!/bin/bash
+      echo "SKipping Testr Results Import as it does not get source direcory on Workspace"
        echo "output"
        echo ${output}
       echo ${getPath}
-
-    
        """
+    
     if (output) {
       DATABRICKS_BUNDLE_WORKSPACE_ROOT_PATH = "${output}"
     } else {
@@ -71,11 +71,11 @@ node {
     }
 
     sh """#!/bin/bash
-          ${DBCLIPATH}/databricks workspace export-dir \
-          ${DATABRICKS_BUNDLE_WORKSPACE_ROOT_PATH}/Validation/Output/test-results \
-          ${WORKSPACE}/Validation/Output/test-results \
-          -t ${BUNDLETARGET} \
-          --overwrite
+         # ${DBCLIPATH}/databricks workspace export-dir \
+         # ${DATABRICKS_BUNDLE_WORKSPACE_ROOT_PATH}/Validation/Output/test-results \
+         # ${WORKSPACE}/Validation/Output/test-results \
+         # -t ${BUNDLETARGET} \
+         # --overwrite
        """
   }
   stage('Publish Test Results') {
