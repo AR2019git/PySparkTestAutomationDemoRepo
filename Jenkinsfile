@@ -79,6 +79,7 @@ node {
        """
   }
   stage('Publish Test Results') {
+    echo ${WORKSPACE}
     junit allowEmptyResults: true, testResults: '**/testresults/*.xml', skipPublishingChecks: true
   
 }
