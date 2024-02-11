@@ -6,6 +6,7 @@ node {
   def JQPATH        = "/usr/local/bin"
   def JOBPREFIX     = "PySparkTestAutomationCICDJob"
   def BUNDLETARGET  = "dev"
+  def DATABRICKSDCONFIGUREFILE = "dbrickscliconfig"
 
   stage('Checkout') {
     sh "echo Hello Ajit"
@@ -13,7 +14,7 @@ node {
   }
   stage('Check Databricks') {
    sh """#!/bin/bash
-          ${DBCLIPATH}/databricks -configure
+          ${DBCLIPATH}/databricks -p ${DATABRICKSDCONFIGUREFILE}
      """
     sh """#!/bin/bash
           echo ${DATABRICKS_CLIENT_ID}
