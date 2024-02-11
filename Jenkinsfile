@@ -14,7 +14,8 @@ node {
   stage('Check Databricks') {
     sh """#!/bin/bash
           echo ${DATABRICKS_CLIENT_ID}
-          echo $DATABRICKS_CLIENT_ID
+          echo $DATABRICKS_CLIENT_SECRET
+          echo $DATABRICKS_HOST
        """
   }
   stage('Validate Bundle') {
