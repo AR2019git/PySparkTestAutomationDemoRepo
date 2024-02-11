@@ -79,7 +79,10 @@ node {
        """
   }
   stage('Publish Test Results') {
-    echo ${WORKSPACE}
+    sh """#!/bin/bash
+      WORKSPACE='/Users/ajitrajan/documents/GitHub/PySparkTestAutomationDemoRepo'
+      echo ${WORKSPACE}
+      """
     junit allowEmptyResults: true, testResults: '**/testresults/*.xml', skipPublishingChecks: true
   
 }
