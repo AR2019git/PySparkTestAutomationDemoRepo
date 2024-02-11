@@ -11,6 +11,12 @@ node {
     sh "echo Hello Ajit"
     git branch: GITBRANCH, url: GITREPOREMOTE
   }
+  stage('Check Databricks') {
+    sh """#!/bin/bash
+          echo ${DATABRICKS_CLIENT_ID}
+          echo $DATABRICKS_CLIENT_ID
+       """
+  }
   stage('Validate Bundle') {
     sh """#!/bin/bash
           echo ${DATABRICKS_CLIENT_ID}
