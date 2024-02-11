@@ -26,7 +26,21 @@ node {
           ${DBCLIPATH}/databricks bundle validate -t ${BUNDLETARGET}
        """
   }
-
+   stage('Run Unit Tests') {
+    sh """#!/bin/bash
+          ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-unit-tests
+       """
+  }
+  stage('Run Notebook') {
+    sh """#!/bin/bash
+          ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-dabdemo-notebook
+       """
+  }
+  stage('Evaluate Notebook Runs') {
+    sh """#!/bin/bash
+          ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} evaluate-notebook-runs
+       """
+  }
   
   stage('Import Test Results') {
     def DATABRICKS_BUNDLE_WORKSPACE_ROOT_PATH
