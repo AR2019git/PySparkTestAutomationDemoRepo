@@ -16,7 +16,7 @@ variables:
 artifacts:
   dabdemo-wheel:
     type: whl
-    path: ./Libraries/python/dabdemo
+    path: ./Libraries/Python/dabdemo
 
 resources:
   jobs:
@@ -51,7 +51,7 @@ resources:
             notebook_path: ./dabdemo_notebook.py
             source: WORKSPACE
           libraries:
-            - whl: "/Workspace${workspace.root_path}/files/Libraries/python/dabdemo/dist/dabdemo-0.0.1-py3-none-any.whl"
+            - whl: "/Workspace${workspace.root_path}/files/Libraries/Python/dabdemo/dist/dabdemo-0.0.1-py3-none-any.whl"
     evaluate-notebook-runs:
       name: ${var.job_prefix}-evaluate-notebook-runs
       tasks:
