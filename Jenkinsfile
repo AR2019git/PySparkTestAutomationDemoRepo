@@ -13,6 +13,7 @@ node {
   }
   stage('Validate Bundle') {
     sh """#!/bin/bash
+          echo ${DATABRICKS_CLIENT_ID}
           ${DBCLIPATH}/databricks bundle validate -t ${BUNDLETARGET}
        """
   }
