@@ -16,7 +16,7 @@ sys.dont_write_bytecode = True
 
 # Run pytest.
 retcode = pytest.main(["--junit-xml", f"/Workspace{os.getenv('WORKSPACEBUNDLEPATH')}/Validation/reports/junit/test-reports/TEST-libout.xml",
-                      f"/Workspace{os.getenv('WORKSPACEBUNDLEPATH')}/files/Libraries/python/dabdemo/dabdemo/"])
+                      f"/Workspace{os.getenv('WORKSPACEBUNDLEPATH')}/files/Libraries/Python/dabdemo/dabdemo/"])
 
 # Fail the cell execution if there are any test failures.
 assert retcode == 0, "The pytest invocation failed. See the log for details."
