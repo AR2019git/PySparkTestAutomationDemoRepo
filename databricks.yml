@@ -8,7 +8,7 @@ variables:
     default: PSTAD
   spark_version:
     description: The cluster's Spark version ID.
-    default: 11.3
+    default: 3.3.0
   node_type_id:
     description: The cluster's node type ID.
     default: Standard_DS3_v2
