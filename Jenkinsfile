@@ -16,6 +16,7 @@ node {
           echo ${DATABRICKS_CLIENT_ID}
           echo $DATABRICKS_CLIENT_SECRET
           echo $DATABRICKS_HOST
+          echo $DATABRICKS_ACCOUNT_ID
        """
   }
   stage('Validate Bundle') {
