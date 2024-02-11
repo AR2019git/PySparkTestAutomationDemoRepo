@@ -79,6 +79,6 @@ node {
        """
   }
   stage('Publish Test Results') {
-    junit allowEmptyResults: true, testResults: '/Users/ajitrajan/documents/GitHub/PySparkTestAutomationDemoRepo/testresults/*.xml', skipPublishingChecks: true
+    junit allowEmptyResults: true, testResults: '/Workspace/Users/cfa80f34-799c-4e83-9f89-52237589d2e5/.bundle/PySparkTestAutomationDemoBundle/dev/Validation/reports/junit/test-reports/*.xml', skipPublishingChecks: true
   }
 }
