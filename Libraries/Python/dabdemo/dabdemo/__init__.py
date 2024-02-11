@@ -1,6 +1,6 @@
 # Filename: __init__.py
 __version__ = '0.0.1'
-__author__ = '<my-author-name>'
+__author__ = 'AjitR'
 
 import sys, os
 
