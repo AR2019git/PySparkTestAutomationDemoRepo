@@ -26,7 +26,7 @@ node {
           ${DBCLIPATH}/databricks bundle validate -t ${BUNDLETARGET}
        """
   }
-  stage('Deploy Bundle') {
+ """ stage('Deploy Bundle') {
     sh """#!/bin/bash
           ${DBCLIPATH}/databricks bundle deploy -t ${BUNDLETARGET}
        """
@@ -46,6 +46,7 @@ node {
           ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} evaluate-notebook-runs
        """
   }
+   """
   stage('Import Test Results') {
     def DATABRICKS_BUNDLE_WORKSPACE_ROOT_PATH
     def getPath = "${DBCLIPATH}/databricks bundle validate -t ${BUNDLETARGET} | ${JQPATH}/jq -r .workspace.file_path"
