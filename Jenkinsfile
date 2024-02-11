@@ -13,9 +13,7 @@ node {
     git branch: GITBRANCH, url: GITREPOREMOTE
   }
   stage('Check Databricks') {
-   sh """#!/bin/bash
-          ${DBCLIPATH}/databricks configure
-     """
+
     sh """#!/bin/bash
           echo ${DATABRICKS_CLIENT_ID}
           echo $DATABRICKS_CLIENT_SECRET
