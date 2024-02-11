@@ -61,7 +61,7 @@ node {
       echo "SKipping Testr Results Import as it does not get source direcory on Workspace"
        echo "output"
        echo ${output}
-      echo ${getPath}
+
        """
     
     if (output) {
