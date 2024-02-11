@@ -14,7 +14,7 @@ node {
   }
   stage('Check Databricks') {
    sh """#!/bin/bash
-          ${DBCLIPATH}/databricks -p ${DATABRICKSDCONFIGUREFILE}
+          ${DBCLIPATH}/databricks configure
      """
     sh """#!/bin/bash
           echo ${DATABRICKS_CLIENT_ID}
