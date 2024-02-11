@@ -11,7 +11,7 @@ variables:
     default: 14.0.x-scala2.12
   node_type_id:
     description: The cluster's node type ID.
-    default: Standard_D4_v2
+    default: Standard_DS5_v2
 
 artifacts:
   dabdemo-wheel:
