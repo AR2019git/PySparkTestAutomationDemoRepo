@@ -3,7 +3,8 @@
 # COMMAND ----------
 
 # Restart Python after installing the wheel.
-# Commented dbutils.library.restartPython()
+# Commented 
+dbutils.library.restartPython()
 
 # COMMAND ----------
 
