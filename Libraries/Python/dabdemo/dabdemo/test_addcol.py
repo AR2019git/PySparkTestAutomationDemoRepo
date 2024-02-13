@@ -6,6 +6,8 @@ from dabdemo.addcol import *
 class TestAppendCol(object):
 
   def test_with_status(self):
+
+    print("in test_addcol.py test_with_status ")
     spark = SparkSession.builder.getOrCreate()
 
     source_data = [
