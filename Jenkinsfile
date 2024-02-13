@@ -34,8 +34,8 @@ node {
   }
   stage('Run Unit Tests') {
     sh """#!/bin/bash
-           echo "Skipping  Unit Test Runs"
-         # ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-unit-tests
+           echo "Running  Unit Test Runs"
+          ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-unit-tests
        """
   }
   stage('Run Notebook') {
@@ -47,8 +47,8 @@ node {
   }
   stage('Evaluate Notebook Runs') {
     sh """#!/bin/bash
-       echo "Skipping Evaluate Notebook Runs"
-        #${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} evaluate-notebook-runs
+       echo "Running Evaluate Notebook Runs"
+        ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} evaluate-notebook-runs
        """
   }
   
@@ -71,16 +71,16 @@ node {
     }
 
     sh """#!/bin/bash
-         # ${DBCLIPATH}/databricks workspace export-dir \
-         # ${DATABRICKS_BUNDLE_WORKSPACE_ROOT_PATH}/Validation/Output/test-results \
-         # ${WORKSPACE}/Validation/Output/test-results \
-         # -t ${BUNDLETARGET} \
-         # --overwrite
+          ${DBCLIPATH}/databricks workspace export-dir \
+          ${DATABRICKS_BUNDLE_WORKSPACE_ROOT_PATH}/Validation/Output/test-results \
+          ${WORKSPACE}/Validation/Output/test-results \
+          -t ${BUNDLETARGET} \
+          --overwrite
        """
   }
   stage('Publish Test Results') {
     sh """#!/bin/bash
-      WORKSPACE='/Users/ajitrajan/documents/GitHub/PySparkTestAutomationDemoRepo'
+      #WORKSPACE='/Users/ajitrajan/documents/GitHub/PySparkTestAutomationDemoRepo'
       echo ${WORKSPACE}
       """
     junit allowEmptyResults: true, testResults: '**/testresults/*.xml', skipPublishingChecks: true
