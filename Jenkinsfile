@@ -18,7 +18,9 @@ node {
           echo $DATABRICKS_CLIENT_SECRET
           echo $DATABRICKS_CLIENT_ID
           echo $DATABRICKS_HOST
+          ${DBCLIPATH}/databricks auth env
        """
+     
   }
   stage('Validate Bundle') {
     sh """#!/bin/bash
