@@ -31,13 +31,13 @@ node {
  stage('Deploy Bundle') {
     sh """#!/bin/bash
           echo "Running  Deploy Bundle"
-          ${DBCLIPATH}/databricks bundle deploy -t ${BUNDLETARGET}
+          #${DBCLIPATH}/databricks bundle deploy -t ${BUNDLETARGET}
        """
   }
   stage('Run Unit Tests') {
     sh """#!/bin/bash
            echo "Running  Unit Test Runs"
-          #${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-unit-tests
+          ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-unit-tests
        """
   }
   stage('Run Notebook') {
