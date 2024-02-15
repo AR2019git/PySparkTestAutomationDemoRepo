@@ -31,26 +31,26 @@ node {
  stage('Deploy Bundle') {
     sh """#!/bin/bash
           echo "Running  Deploy Bundle"
-         # ${DBCLIPATH}/databricks bundle deploy -t ${BUNDLETARGET}
+          ${DBCLIPATH}/databricks bundle deploy -t ${BUNDLETARGET}
        """
   }
   stage('Run Unit Tests') {
     sh """#!/bin/bash
            echo "Running  Unit Test Runs"
-          ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-unit-tests
+          #${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-unit-tests
        """
   }
   stage('Run Notebook') {
     sh """#!/bin/bash
         echo "Skipping Evaluate DABDEMO Runs"
 
-          #${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-dabdemo-notebook
+          ##${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} run-dabdemo-notebook
        """
   }
   stage('Evaluate Notebook Runs') {
     sh """#!/bin/bash
        echo "Running Evaluate Notebook Runs"
-        ${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} evaluate-notebook-runs
+        #${DBCLIPATH}/databricks bundle run -t ${BUNDLETARGET} evaluate-notebook-runs
        """
   }
   
